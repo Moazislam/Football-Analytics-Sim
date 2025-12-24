@@ -5,4 +5,7 @@ scipy
 matplotlib
 PyQt6
 
-```use python 3.11 for its compatibility with PyQt6  ```
+```
+use python 3.11 for its compatibility with PyQt6 
+leave the csv in root
+```
