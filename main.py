@@ -20,7 +20,6 @@ from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 warnings.filterwarnings('ignore')
 
 # --- CONFIGURATION ---
-# MAP YOUR CSV FILES HERE
 LEAGUE_FILES = {
     "🇬🇧 Premier League": "E0.csv",
     "🇪🇸 La Liga": "SP1.csv",
@@ -224,17 +223,22 @@ class SimulationWorker(QThread):
 class OptaSimulator(QMainWindow):
     def __init__(self):
         super().__init__()
+        
+        # Initialize attributes to None to prevent crashes
         self.df = None
         self.results = None
+        
+        # Build UI first
         self.init_ui()
         
-        # Load the first league by default
-        first_league = list(LEAGUE_FILES.keys())[0]
-        self.combo_league.setCurrentText(first_league)
+        # Now safely load the first league
+        if LEAGUE_FILES:
+            first_league = list(LEAGUE_FILES.keys())[0]
+            # Explicitly call load (setCurrentText sometimes doesn't trigger on startup)
+            self.load_league_data(first_league)
         
     def init_ui(self):
         self.setWindowTitle("Advanced Season Simulator & Stats Explorer")
-        self.setGeometry(50, 50, 1600, 900)
         
         # Theme Styles
         self.setStyleSheet("""
@@ -256,7 +260,7 @@ class OptaSimulator(QMainWindow):
         self.setCentralWidget(central_widget)
         main_layout = QVBoxLayout(central_widget)
         
-        # --- Top Header & League Selector ---
+        # --- Top Header ---
         header_frame = QFrame()
         header_frame.setStyleSheet("background: #1e1b4b; border-radius: 12px; margin-bottom: 10px;")
         header_layout = QHBoxLayout(header_frame)
@@ -265,7 +269,7 @@ class OptaSimulator(QMainWindow):
         title = QLabel("Phenoix Opta: Analytics Suite")
         title.setFont(QFont("Arial", 22, QFont.Weight.Bold))
         title.setStyleSheet("color: #a78bfa;")
-        subtitle = QLabel("Monte Carlo Simulation & Advanced Stats")
+        subtitle = QLabel("Monte Carlo Simulation & Advanced Stats (ESC to Exit Full Screen)")
         subtitle.setStyleSheet("color: #94a3b8;")
         title_box.addWidget(title)
         title_box.addWidget(subtitle)
@@ -273,14 +277,12 @@ class OptaSimulator(QMainWindow):
         header_layout.addLayout(title_box)
         header_layout.addStretch()
         
-        # LEAGUE SELECTOR
+        # LEAGUE SELECTOR (Create but do not populate yet!)
         league_box = QVBoxLayout()
         league_label = QLabel("Active League:")
         league_label.setStyleSheet("color: #94a3b8; font-size: 11px; text-transform: uppercase;")
         self.combo_league = QComboBox()
         self.combo_league.setMinimumWidth(250)
-        self.combo_league.addItems(LEAGUE_FILES.keys())
-        self.combo_league.currentTextChanged.connect(self.load_league_data)
         
         league_box.addWidget(league_label)
         league_box.addWidget(self.combo_league)
@@ -288,21 +290,33 @@ class OptaSimulator(QMainWindow):
         
         main_layout.addWidget(header_frame)
         
-        # Main Tab Widget
+        # Main Tab Widget (Creates all sub-widgets like tables/labels)
         self.main_tabs = QTabWidget()
         
         # TAB 1: SIMULATION
         self.sim_tab = self.create_simulation_tab()
         self.main_tabs.addTab(self.sim_tab, "🔮 Season Prediction")
         
-        # TAB 2: STATS EXPLORER (Table + Charts)
+        # TAB 2: STATS EXPLORER
         self.stats_tab = self.create_stats_tab()
         self.main_tabs.addTab(self.stats_tab, "📊 Stats Explorer")
         
         main_layout.addWidget(self.main_tabs)
+        
+        # --- SAFE INITIALIZATION ---
+        # Only now, after all UI elements exist, do we populate the dropdown.
+        # This prevents "AttributeError: 'OptaSimulator' object has no attribute 'lbl_info'"
+        self.combo_league.addItems(LEAGUE_FILES.keys())
+        self.combo_league.currentTextChanged.connect(self.load_league_data)
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key.Key_Escape:
+            if self.isFullScreen():
+                self.showNormal()
+            else:
+                self.showFullScreen()
 
     def load_league_data(self, league_name):
-        """Loads the CSV for the selected league and resets the UI"""
         filename = LEAGUE_FILES.get(league_name)
         if not filename: return
         
@@ -310,6 +324,7 @@ class OptaSimulator(QMainWindow):
         self.results = None
         
         # Reset UI elements
+        # Because init_ui is done, we are guaranteed these exist now
         self.sim_table.setRowCount(0)
         self.heatmap_table.setRowCount(0)
         self.sim_figure.clear()
@@ -322,18 +337,15 @@ class OptaSimulator(QMainWindow):
             try:
                 self.df = pd.read_csv(filename)
                 
-                # Update Status
                 self.lbl_info.setText(f"Loaded: {league_name} ({len(self.df)} matches)")
                 self.lbl_info.setStyleSheet("color: #22c55e;")
                 self.btn_run.setEnabled(True)
                 
-                # --- Update Stats Tab Dropdowns ---
                 seasons = sorted(self.df['Season'].unique(), reverse=True)
                 self.combo_season.addItem("All Seasons")
                 for s in seasons:
                     self.combo_season.addItem(str(s))
                 
-                # Metrics
                 self.combo_metric.addItem("🏆 League Standings")
                 numeric_cols = self.df.select_dtypes(include=np.number).columns.tolist()
                 ignore_cols = ['Season', 'DecayWeight']
@@ -343,7 +355,6 @@ class OptaSimulator(QMainWindow):
                 for c in numeric_cols:
                     if c not in priority and c not in ignore_cols: self.combo_metric.addItem(c)
                 
-                # Trigger Stats View Update
                 self.update_stats_view()
                 
             except Exception as e:
@@ -361,7 +372,6 @@ class OptaSimulator(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         
-        # Controls
         control_frame = QFrame()
         control_frame.setStyleSheet("background: #1e293b; border-radius: 8px;")
         hbox = QHBoxLayout(control_frame)
@@ -374,13 +384,11 @@ class OptaSimulator(QMainWindow):
         hbox.addWidget(self.btn_run)
         layout.addWidget(control_frame)
         
-        # Progress
         self.progress_bar = QProgressBar()
         self.progress_bar.setVisible(False)
         self.progress_bar.setStyleSheet("QProgressBar { text-align: center; border: 1px solid #475569; border-radius: 4px; height: 15px; } QProgressBar::chunk { background: #7c3aed; }")
         layout.addWidget(self.progress_bar)
         
-        # Inner Tabs (Table vs Viz)
         self.sim_inner_tabs = QTabWidget()
         self.sim_inner_tabs.addTab(self.create_sim_table(), "Standings Table")
         self.sim_inner_tabs.addTab(self.create_sim_viz(), "Heatmap & Charts")
@@ -399,7 +407,6 @@ class OptaSimulator(QMainWindow):
     def create_sim_viz(self):
         splitter = QSplitter(Qt.Orientation.Vertical)
         
-        # Heatmap
         self.heatmap_table = QTableWidget()
         self.heatmap_table.setColumnCount(21)
         self.heatmap_table.setHorizontalHeaderLabels(["TEAM"] + [str(i) for i in range(1, 21)])
@@ -408,7 +415,6 @@ class OptaSimulator(QMainWindow):
         for i in range(1, 21): self.heatmap_table.setColumnWidth(i, 35)
         splitter.addWidget(self.heatmap_table)
         
-        # Charts
         self.sim_figure = plt.figure(facecolor='#0f172a')
         self.sim_canvas = FigureCanvas(self.sim_figure)
         splitter.addWidget(self.sim_canvas)
@@ -461,7 +467,6 @@ class OptaSimulator(QMainWindow):
             gd_item.setForeground(QColor("#f87171") if r['avg_gd'] < 0 else QColor("#4ade80"))
             self.sim_table.setItem(i, 5, gd_item)
             
-            # Probs
             self.set_prob(i, 6, r['win_prob'], "#fbbf24")
             self.set_prob(i, 7, r['top4_prob'], "#60a5fa")
             self.set_prob(i, 8, r['top6_prob'], "#a78bfa")
@@ -487,9 +492,8 @@ class OptaSimulator(QMainWindow):
                 item = QTableWidgetItem(f"{prob:.0f}")
                 item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 
-                # Color Math
                 alpha = min(prob / 30.0, 1.0) * 255
-                bg = QColor(236, 72, 153, int(alpha)) # Pink
+                bg = QColor(236, 72, 153, int(alpha)) 
                 item.setBackground(bg)
                 item.setForeground(Qt.GlobalColor.white if alpha > 100 else Qt.GlobalColor.gray)
                 self.heatmap_table.setItem(r_idx, c_idx+1, item)
@@ -514,18 +518,16 @@ class OptaSimulator(QMainWindow):
         self.sim_canvas.draw()
 
     # ---------------------------------------------------------
-    # TAB 2: STATS EXPLORER LOGIC (UPDATED WITH CHARTS)
+    # TAB 2: STATS EXPLORER LOGIC
     # ---------------------------------------------------------
     def create_stats_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         
-        # --- Top Bar: Filters ---
         filter_frame = QFrame()
         filter_frame.setStyleSheet("background: #1e293b; border-radius: 8px; padding: 10px;")
         filter_layout = QHBoxLayout(filter_frame)
         
-        # Season Selector
         filter_layout.addWidget(QLabel("Season:"))
         self.combo_season = QComboBox()
         self.combo_season.currentIndexChanged.connect(self.update_stats_view)
@@ -533,7 +535,6 @@ class OptaSimulator(QMainWindow):
         
         filter_layout.addSpacing(20)
         
-        # Metric Selector
         filter_layout.addWidget(QLabel("Metric:"))
         self.combo_metric = QComboBox()
         self.combo_metric.currentIndexChanged.connect(self.update_stats_view)
@@ -542,36 +543,29 @@ class OptaSimulator(QMainWindow):
         filter_layout.addStretch()
         layout.addWidget(filter_frame)
         
-        # --- SPLITTER: Table (Top) & Charts (Bottom) ---
         splitter = QSplitter(Qt.Orientation.Vertical)
         
-        # 1. Table
         self.stats_table = QTableWidget()
         self.stats_table.setAlternatingRowColors(True)
         self.stats_table.verticalHeader().setVisible(False)
         splitter.addWidget(self.stats_table)
         
-        # 2. Charts Area
         self.stats_figure = Figure(facecolor='#0f172a')
         self.stats_canvas = FigureCanvas(self.stats_figure)
         splitter.addWidget(self.stats_canvas)
         
-        # Set initial size ratio (60% table, 40% charts)
         splitter.setSizes([500, 300])
-        
         layout.addWidget(splitter)
         
         return widget
 
     def update_stats_view(self):
-        """Dynamic Table: Switches between Standings and Generic Stats"""
         if self.df is None or self.combo_metric.count() == 0:
             return
             
         season_txt = self.combo_season.currentText()
         metric = self.combo_metric.currentText()
         
-        # 1. Filter Data by Season
         if season_txt == "All Seasons":
             data = self.df.copy()
         else:
@@ -581,31 +575,22 @@ class OptaSimulator(QMainWindow):
             except:
                 return
 
-        # 2. Update Charts
         self.update_stats_charts(data, metric)
 
-        # 3. Update Table
-        # --- MODE A: LEAGUE STANDINGS ---
         if metric == "🏆 League Standings":
             self.display_standings(data)
-            
-        # --- MODE B: GENERIC METRIC (xG, Goals, etc) ---
         else:
             self.display_generic_metric(data, metric)
 
     def update_stats_charts(self, data, metric):
-        """Plots Histograms and Bar Charts for the selected metric"""
         self.stats_figure.clear()
         
-        # Styling configuration
         text_color = '#94a3b8'
         bar_color = '#7c3aed'
         hist_color = '#38bdf8'
         bg_color = '#0f172a'
 
         if metric == "🏆 League Standings":
-            # If Standings is selected, we plot Points per Team
-            # We need to quickly calculate points again for the chart
             teams = {}
             for _, row in data.iterrows():
                 if pd.isna(row['FullTimeHomeGoals']): continue
@@ -620,8 +605,8 @@ class OptaSimulator(QMainWindow):
                 else:
                     teams[h] += 1; teams[a] += 1
             
-            sorted_teams = sorted(teams.items(), key=lambda item: item[1], reverse=False) # Ascending for barh
-            names = [x[0] for x in sorted_teams[-10:]] # Top 10
+            sorted_teams = sorted(teams.items(), key=lambda item: item[1], reverse=False)
+            names = [x[0] for x in sorted_teams[-10:]]
             values = [x[1] for x in sorted_teams[-10:]]
             
             ax = self.stats_figure.add_subplot(111)
@@ -637,23 +622,18 @@ class OptaSimulator(QMainWindow):
             ax.spines['left'].set_color('#475569')
             
         else:
-            # Generic Metric (e.g., HomeTeamxG)
-            # Create 2 Subplots: Leaderboard (Bar) and Distribution (Histogram)
             gs = self.stats_figure.add_gridspec(1, 2)
-            ax1 = self.stats_figure.add_subplot(gs[0, 0]) # Bar Chart
-            ax2 = self.stats_figure.add_subplot(gs[0, 1]) # Histogram
+            ax1 = self.stats_figure.add_subplot(gs[0, 0])
+            ax2 = self.stats_figure.add_subplot(gs[0, 1])
 
-            # Prepare Data
             group_col = "AwayTeam" if "Away" in metric else "HomeTeam"
             
-            # Bar Chart Data (Sum per team)
             agg = data.groupby(group_col)[metric].sum().sort_values(ascending=True)
-            top_agg = agg.tail(10) # Top 10
+            top_agg = agg.tail(10)
             
             ax1.barh(top_agg.index, top_agg.values, color=bar_color)
             ax1.set_title(f"Total {metric} by Team (Top 10)", color='white', fontsize=10)
             
-            # Histogram Data (Distribution per match)
             ax2.hist(data[metric].dropna(), bins=15, color=hist_color, edgecolor='#0f172a', alpha=0.8)
             ax2.set_title(f"Distribution of {metric} (Per Match)", color='white', fontsize=10)
             ax2.set_ylabel("Frequency", color=text_color)
@@ -670,13 +650,11 @@ class OptaSimulator(QMainWindow):
         self.stats_canvas.draw()
 
     def display_standings(self, data):
-        """Calculates and displays a W-D-L Table"""
         columns = ["Pos", "Team", "P", "W", "D", "L", "GF", "GA", "GD", "Pts"]
         self.stats_table.setColumnCount(len(columns))
         self.stats_table.setHorizontalHeaderLabels(columns)
         self.stats_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
         
-        # Calculate Standings Manually
         teams = {} 
         for _, row in data.iterrows():
             if pd.isna(row['FullTimeHomeGoals']) or pd.isna(row['FullTimeAwayGoals']):
@@ -735,7 +713,6 @@ class OptaSimulator(QMainWindow):
             self.stats_table.setItem(i, 9, pts_item)
 
     def display_generic_metric(self, data, metric):
-        """Displays simple Leaderboard for specific metric"""
         self.stats_table.setColumnCount(4)
         self.stats_table.setHorizontalHeaderLabels(["Rank", "Team", "Total", "Per Game"])
         self.stats_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
@@ -766,5 +743,5 @@ class OptaSimulator(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = OptaSimulator()
-    window.show()
+    window.showFullScreen()
     sys.exit(app.exec())
