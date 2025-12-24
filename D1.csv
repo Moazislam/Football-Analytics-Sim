@@ -1,0 +1,277 @@
+Season,Date,HomeTeam,AwayTeam,FullTimeHomeGoals,FullTimeAwayGoals,HomeTeamxG,AwayTeamxG
+2021,2021-08-14,Augsburg,Hoffenheim,0,4,0.734658,3.44423
+2021,2021-08-14,Wolfsburg,Bochum,1,0,2.78774,0.297792
+2021,2021-08-22,Hoffenheim,Union Berlin,2,2,0.967015,2.35122
+2021,2021-09-11,Union Berlin,Augsburg,0,0,1.71533,0.831722
+2021,2021-09-18,Bayern Munich,Bochum,7,0,6.88189,1.23312
+2021,2021-09-25,Hoffenheim,Wolfsburg,3,1,1.78602,0.504541
+2021,2021-09-26,Freiburg,Augsburg,3,0,3.97075,0.191653
+2021,2021-10-16,Union Berlin,Wolfsburg,2,0,1.32884,1.28381
+2021,2021-10-23,Bayern Munich,Hoffenheim,4,0,3.31148,0.446465
+2021,2021-10-23,Wolfsburg,Freiburg,0,2,1.72591,2.17659
+2021,2021-10-30,Union Berlin,Bayern Munich,2,5,0.744794,3.14739
+2021,2021-11-06,Bayern Munich,Freiburg,2,1,3.16849,0.910798
+2021,2021-11-06,Bochum,Hoffenheim,2,0,2.12433,0.641687
+2021,2021-11-06,Wolfsburg,Augsburg,1,0,0.910085,0.867311
+2021,2021-11-19,Augsburg,Bayern Munich,2,1,0.614461,1.24258
+2021,2021-11-27,Bochum,Freiburg,2,1,0.955994,2.12135
+2021,2021-12-04,Augsburg,Bochum,2,3,2.86606,2.04524
+2021,2021-12-11,Freiburg,Hoffenheim,1,2,2.25197,1.5054
+2021,2021-12-15,Union Berlin,Freiburg,0,0,2.25007,1.22466
+2021,2021-12-17,Bayern Munich,Wolfsburg,4,0,4.31291,1.41635
+2021,2021-12-18,Bochum,Union Berlin,0,1,1.04215,0.999651
+2021,2022-01-08,Hoffenheim,Augsburg,3,1,2.76228,0.749744
+2021,2022-01-09,Bochum,Wolfsburg,1,0,1.57295,0.400404
+2021,2022-01-15,Union Berlin,Hoffenheim,2,1,1.76684,0.61487
+2021,2022-02-05,Augsburg,Union Berlin,2,0,1.83212,2.09718
+2021,2022-02-12,Bochum,Bayern Munich,4,2,1.34846,1.87083
+2021,2022-02-19,Augsburg,Freiburg,1,2,0.951389,2.56075
+2021,2022-02-19,Wolfsburg,Hoffenheim,1,2,1.50299,1.07132
+2021,2022-03-05,Wolfsburg,Union Berlin,1,0,0.411697,1.55639
+2021,2022-03-12,Freiburg,Wolfsburg,3,2,1.54229,0.908576
+2021,2022-03-12,Hoffenheim,Bayern Munich,1,1,2.02668,3.98532
+2021,2022-03-19,Bayern Munich,Union Berlin,4,0,2.82028,1.38973
+2021,2022-04-02,Hoffenheim,Bochum,1,2,1.9687,1.70208
+2021,2022-04-02,Freiburg,Bayern Munich,1,4,0.754263,3.15613
+2021,2022-04-03,Augsburg,Wolfsburg,3,0,2.52845,1.18916
+2021,2022-04-09,Bayern Munich,Augsburg,1,0,1.43145,0.277271
+2021,2022-04-16,Freiburg,Bochum,3,0,2.45736,0.427462
+2021,2022-04-24,Bochum,Augsburg,0,2,1.18661,1.99486
+2021,2022-04-30,Hoffenheim,Freiburg,3,4,2.60025,2.694
+2021,2022-05-07,Freiburg,Union Berlin,1,4,1.64859,2.40109
+2021,2022-05-14,Wolfsburg,Bayern Munich,2,2,1.14112,2.07091
+2021,2022-05-14,Union Berlin,Bochum,3,2,3.37468,0.391265
+2022,2022-08-06,Augsburg,Freiburg,0,4,0.585905,1.54255
+2022,2022-08-06,Wolfsburg,Werder Bremen,2,2,0.954909,1.04228
+2022,2022-08-13,Hoffenheim,Bochum,3,2,2.3761,1.47438
+2022,2022-08-14,Bayern Munich,Wolfsburg,2,0,1.4017,0.443318
+2022,2022-08-20,Wolfsburg,Schalke 04,0,0,1.20648,1.03296
+2022,2022-08-21,Bochum,Bayern Munich,0,7,0.747624,3.98121
+2022,2022-08-26,Freiburg,Bochum,1,0,4.40931,1.13013
+2022,2022-08-27,Schalke 04,Union Berlin,1,6,1.86616,1.0651
+2022,2022-08-27,Hoffenheim,Augsburg,1,0,2.00234,0.458737
+2022,2022-09-03,Bochum,Werder Bremen,0,2,1.22972,1.9903
+2022,2022-09-03,Union Berlin,Bayern Munich,1,1,0.443137,1.38204
+2022,2022-09-09,Werder Bremen,Augsburg,0,1,1.83702,1.7824
+2022,2022-09-10,Schalke 04,Bochum,3,1,1.4133,1.31293
+2022,2022-09-17,Augsburg,Bayern Munich,1,0,2.20918,1.82063
+2022,2022-09-18,Union Berlin,Wolfsburg,2,0,1.07406,0.218049
+2022,2022-09-18,Hoffenheim,Freiburg,0,0,0.74318,0.6761
+2022,2022-10-02,Schalke 04,Augsburg,2,3,2.0592,1.48391
+2022,2022-10-07,Hoffenheim,Werder Bremen,1,2,1.30088,1.43801
+2022,2022-10-08,Augsburg,Wolfsburg,1,1,2.01628,2.30655
+2022,2022-10-14,Schalke 04,Hoffenheim,0,3,0.697562,3.51699
+2022,2022-10-16,Bayern Munich,Freiburg,5,0,2.07998,0.328313
+2022,2022-10-22,Freiburg,Werder Bremen,2,0,3.33695,0.393506
+2022,2022-10-22,Hoffenheim,Bayern Munich,0,2,0.766181,3.12799
+2022,2022-10-23,Bochum,Union Berlin,2,1,1.11544,1.00303
+2022,2022-10-29,Wolfsburg,Bochum,4,0,2.58922,0.444056
+2022,2022-10-30,Schalke 04,Freiburg,0,2,0.841369,2.25332
+2022,2022-11-05,Werder Bremen,Schalke 04,2,1,1.33073,1.35128
+2022,2022-11-08,Bayern Munich,Werder Bremen,6,1,5.72728,1.44045
+2022,2022-11-09,Union Berlin,Augsburg,2,2,1.84012,0.29444
+2022,2022-11-12,Augsburg,Bochum,0,1,2.34583,1.13531
+2022,2022-11-12,Hoffenheim,Wolfsburg,1,2,1.42352,0.94899
+2022,2022-11-12,Schalke 04,Bayern Munich,0,2,0.891772,1.65233
+2022,2022-11-13,Freiburg,Union Berlin,4,1,2.69015,1.65553
+2022,2023-01-21,Union Berlin,Hoffenheim,3,1,2.48055,0.966541
+2022,2023-01-21,Wolfsburg,Freiburg,6,0,2.88084,0.808738
+2022,2023-01-25,Werder Bremen,Union Berlin,1,2,0.566574,1.05412
+2022,2023-01-28,Freiburg,Augsburg,3,1,1.92228,2.00438
+2022,2023-01-28,Werder Bremen,Wolfsburg,2,1,1.80059,0.696581
+2022,2023-02-04,Bochum,Hoffenheim,5,2,2.74719,0.82308
+2022,2023-02-05,Wolfsburg,Bayern Munich,2,4,2.39463,0.568665
+2022,2023-02-10,Schalke 04,Wolfsburg,0,0,0.999355,1.39713
+2022,2023-02-11,Bayern Munich,Bochum,3,0,4.37602,0.242356
+2022,2023-02-17,Augsburg,Hoffenheim,1,0,1.48158,0.446218
+2022,2023-02-18,Bochum,Freiburg,0,2,1.40839,2.39926
+2022,2023-02-19,Union Berlin,Schalke 04,0,0,0.827192,0.385916
+2022,2023-02-25,Werder Bremen,Bochum,3,0,1.17524,0.396228
+2022,2023-02-26,Bayern Munich,Union Berlin,3,0,3.86403,0.212984
+2022,2023-03-04,Augsburg,Werder Bremen,2,1,0.493189,1.68845
+2022,2023-03-04,Bochum,Schalke 04,0,2,0.926001,0.873349
+2022,2023-03-11,Bayern Munich,Augsburg,5,3,2.49393,2.48124
+2022,2023-03-12,Freiburg,Hoffenheim,2,1,0.452025,1.16149
+2022,2023-03-12,Wolfsburg,Union Berlin,1,1,1.33065,1.22513
+2022,2023-03-18,Augsburg,Schalke 04,1,1,0.395653,1.68365
+2022,2023-04-01,Wolfsburg,Augsburg,2,2,3.93815,0.918055
+2022,2023-04-02,Werder Bremen,Hoffenheim,1,2,0.67338,1.63673
+2022,2023-04-08,Freiburg,Bayern Munich,0,1,1.0909,3.09211
+2022,2023-04-09,Hoffenheim,Schalke 04,2,0,2.17705,0.561062
+2022,2023-04-15,Bayern Munich,Hoffenheim,1,1,1.88997,0.27365
+2022,2023-04-16,Union Berlin,Bochum,1,1,1.05608,1.51987
+2022,2023-04-16,Werder Bremen,Freiburg,1,2,1.43107,0.473775
+2022,2023-04-22,Bochum,Wolfsburg,1,5,2.7745,3.34214
+2022,2023-04-23,Freiburg,Schalke 04,4,0,2.63573,0.388444
+2022,2023-04-29,Schalke 04,Werder Bremen,2,1,1.24953,1.48812
+2022,2023-05-06,Augsburg,Union Berlin,1,0,1.00945,0.485635
+2022,2023-05-06,Werder Bremen,Bayern Munich,1,2,0.805974,2.02292
+2022,2023-05-13,Wolfsburg,Hoffenheim,2,1,0.971216,0.758147
+2022,2023-05-13,Union Berlin,Freiburg,4,2,1.44733,2.08886
+2022,2023-05-13,Bayern Munich,Schalke 04,6,0,5.05599,0.33961
+2022,2023-05-13,Bochum,Augsburg,3,2,1.32347,1.32904
+2022,2023-05-19,Freiburg,Wolfsburg,2,0,1.44647,0.658973
+2022,2023-05-20,Hoffenheim,Union Berlin,4,2,2.49016,1.67535
+2022,2023-05-27,Union Berlin,Werder Bremen,1,0,0.783196,0.399601
+2023,2023-08-18,Werder Bremen,Bayern Munich,0,4,0.63974,2.89704
+2023,2023-08-19,Hoffenheim,Freiburg,1,2,1.67186,3.24821
+2023,2023-08-26,Darmstadt,Union Berlin,1,4,2.59994,1.6379
+2023,2023-08-26,Freiburg,Werder Bremen,1,0,1.71877,0.696983
+2023,2023-08-27,Bayern Munich,Augsburg,3,1,2.82296,0.726241
+2023,2023-09-02,Augsburg,Bochum,2,2,1.88106,1.86494
+2023,2023-09-02,Hoffenheim,Wolfsburg,3,1,1.78689,1.4154
+2023,2023-09-16,Wolfsburg,Union Berlin,2,1,0.566932,1.56941
+2023,2023-09-23,Bayern Munich,Bochum,7,0,6.02607,0.0892044
+2023,2023-09-23,Union Berlin,Hoffenheim,0,2,1.62442,2.15364
+2023,2023-10-01,Darmstadt,Werder Bremen,4,2,2.34923,1.54627
+2023,2023-10-01,Freiburg,Augsburg,2,0,1.2721,1.00081
+2023,2023-10-07,Augsburg,Darmstadt,1,2,1.18473,1.96153
+2023,2023-10-07,Werder Bremen,Hoffenheim,2,3,1.03064,1.52805
+2023,2023-10-08,Bayern Munich,Freiburg,3,0,2.37438,0.0704987
+2023,2023-10-21,Freiburg,Bochum,2,1,2.5274,1.37705
+2023,2023-10-28,Augsburg,Wolfsburg,3,2,1.59374,1.25516
+2023,2023-10-28,Bayern Munich,Darmstadt,8,0,5.884,0.924873
+2023,2023-10-28,Werder Bremen,Union Berlin,2,0,0.690799,0.368624
+2023,2023-11-03,Darmstadt,Bochum,1,2,0.854923,1.56273
+2023,2023-11-05,Wolfsburg,Werder Bremen,2,2,1.81371,1.40324
+2023,2023-11-11,Augsburg,Hoffenheim,1,1,0.937133,0.897413
+2023,2023-11-25,Union Berlin,Augsburg,1,1,2.40798,1.84043
+2023,2023-11-25,Freiburg,Darmstadt,1,1,1.34505,0.34181
+2023,2023-12-02,Bochum,Wolfsburg,3,1,2.07603,1.03452
+2023,2023-12-08,Hoffenheim,Bochum,3,1,2.27533,1.82523
+2023,2023-12-09,Werder Bremen,Augsburg,2,0,1.84577,0.627715
+2023,2023-12-09,Wolfsburg,Freiburg,0,1,1.32934,0.511263
+2023,2023-12-16,Bochum,Union Berlin,3,0,3.57797,0.670719
+2023,2023-12-16,Darmstadt,Wolfsburg,0,1,0.942093,0.587028
+2023,2023-12-19,Hoffenheim,Darmstadt,3,3,2.81806,0.952662
+2023,2023-12-20,Wolfsburg,Bayern Munich,1,2,0.313193,3.15053
+2023,2024-01-12,Bayern Munich,Hoffenheim,3,0,3.4164,1.61888
+2023,2024-01-13,Freiburg,Union Berlin,0,0,2.1675,0.424997
+2023,2024-01-14,Bochum,Werder Bremen,1,1,1.24017,0.934194
+2023,2024-01-20,Freiburg,Hoffenheim,3,2,2.47971,1.76349
+2023,2024-01-21,Bayern Munich,Werder Bremen,0,1,1.54562,0.429252
+2023,2024-01-24,Bayern Munich,Union Berlin,1,0,2.172,0.477644
+2023,2024-01-27,Werder Bremen,Freiburg,3,1,2.33032,1.33739
+2023,2024-01-27,Augsburg,Bayern Munich,2,3,2.68517,2.27504
+2023,2024-01-28,Union Berlin,Darmstadt,1,0,3.54733,1.00135
+2023,2024-02-03,Bochum,Augsburg,1,1,1.16731,1.39431
+2023,2024-02-04,Wolfsburg,Hoffenheim,2,2,1.60418,1.93269
+2023,2024-02-10,Union Berlin,Wolfsburg,1,0,0.575454,1.08099
+2023,2024-02-17,Hoffenheim,Union Berlin,0,1,1.24508,2.1649
+2023,2024-02-18,Bochum,Bayern Munich,3,2,2.08495,2.86883
+2023,2024-02-24,Werder Bremen,Darmstadt,1,1,1.5891,0.890186
+2023,2024-02-25,Augsburg,Freiburg,2,1,2.40818,1.42649
+2023,2024-03-01,Freiburg,Bayern Munich,2,2,1.53977,2.4424
+2023,2024-03-02,Darmstadt,Augsburg,0,6,1.113,3.39611
+2023,2024-03-03,Hoffenheim,Werder Bremen,2,1,2.06582,1.34942
+2023,2024-03-10,Bochum,Freiburg,1,2,1.28237,1.43573
+2023,2024-03-16,Darmstadt,Bayern Munich,2,5,1.2476,5.11913
+2023,2024-03-16,Union Berlin,Werder Bremen,2,1,1.42836,0.833042
+2023,2024-03-16,Wolfsburg,Augsburg,1,3,1.67932,0.971481
+2023,2024-03-30,Werder Bremen,Wolfsburg,0,2,0.738782,2.44615
+2023,2024-03-31,Bochum,Darmstadt,2,2,2.29251,0.879015
+2023,2024-04-07,Hoffenheim,Augsburg,3,1,2.21977,0.806763
+2023,2024-04-12,Augsburg,Union Berlin,2,0,1.7073,1.55042
+2023,2024-04-14,Darmstadt,Freiburg,0,1,0.962275,1.34437
+2023,2024-04-20,Wolfsburg,Bochum,1,0,1.34814,1.37904
+2023,2024-04-20,Union Berlin,Bayern Munich,1,5,1.06863,1.92795
+2023,2024-04-26,Bochum,Hoffenheim,3,2,3.91029,1.28293
+2023,2024-04-27,Augsburg,Werder Bremen,0,3,0.54257,2.53138
+2023,2024-04-27,Freiburg,Wolfsburg,1,2,1.86256,0.583145
+2023,2024-05-04,Wolfsburg,Darmstadt,3,0,3.16035,0.372357
+2023,2024-05-05,Union Berlin,Bochum,3,4,1.49561,1.84679
+2023,2024-05-12,Darmstadt,Hoffenheim,0,6,0.467229,3.67135
+2023,2024-05-12,Bayern Munich,Wolfsburg,2,0,0.37152,0.132383
+2023,2024-05-18,Hoffenheim,Bayern Munich,4,2,2.44188,1.69159
+2023,2024-05-18,Union Berlin,Freiburg,2,1,2.28943,0.963773
+2023,2024-05-18,Werder Bremen,Bochum,4,1,3.80667,2.14301
+2024,2024-08-24,Augsburg,Werder Bremen,2,2,1.31571,1.54312
+2024,2024-08-24,Hoffenheim,Holstein Kiel,3,2,3.73706,1.97238
+2024,2024-08-25,Wolfsburg,Bayern Munich,2,3,2.08125,2.17538
+2024,2024-08-31,Holstein Kiel,Wolfsburg,0,2,0.89489,1.4619
+2024,2024-09-01,Bayern Munich,Freiburg,2,0,1.62797,0.970892
+2024,2024-09-14,Freiburg,Bochum,2,1,3.95617,1.10732
+2024,2024-09-14,Holstein Kiel,Bayern Munich,1,6,0.299776,4.13442
+2024,2024-09-21,Bochum,Holstein Kiel,2,2,1.32383,2.26878
+2024,2024-09-21,Union Berlin,Hoffenheim,2,1,1.21587,0.378776
+2024,2024-09-21,Werder Bremen,Bayern Munich,0,5,0.0,3.34451
+2024,2024-09-29,Hoffenheim,Werder Bremen,3,4,1.78654,4.06917
+2024,2024-10-05,Werder Bremen,Freiburg,0,1,0.879674,1.58065
+2024,2024-10-05,Bochum,Wolfsburg,1,3,2.28586,2.37344
+2024,2024-10-19,Freiburg,Augsburg,3,1,1.07588,0.868723
+2024,2024-10-19,Hoffenheim,Bochum,3,1,2.46268,2.3454
+2024,2024-10-20,Holstein Kiel,Union Berlin,0,2,0.901058,1.2809
+2024,2024-10-20,Wolfsburg,Werder Bremen,2,4,2.17351,2.14788
+2024,2024-10-27,Bochum,Bayern Munich,0,5,0.205046,3.1499
+2024,2024-11-02,Bayern Munich,Union Berlin,3,0,2.76181,0.4664
+2024,2024-11-02,Wolfsburg,Augsburg,1,1,1.11324,0.499473
+2024,2024-11-08,Union Berlin,Freiburg,0,0,0.801684,2.66619
+2024,2024-11-09,Werder Bremen,Holstein Kiel,2,1,2.26129,0.884231
+2024,2024-11-10,Augsburg,Hoffenheim,0,0,0.970329,0.415649
+2024,2024-11-22,Bayern Munich,Augsburg,3,0,4.02659,0.149096
+2024,2024-11-23,Wolfsburg,Union Berlin,1,0,0.742754,0.63337
+2024,2024-11-30,Augsburg,Bochum,1,0,2.15529,0.250706
+2024,2024-12-07,Bochum,Werder Bremen,0,1,1.16256,1.20754
+2024,2024-12-08,Hoffenheim,Freiburg,1,1,1.49449,1.53138
+2024,2024-12-13,Freiburg,Wolfsburg,3,2,2.96777,1.85123
+2024,2024-12-14,Union Berlin,Bochum,0,2,3.0131,1.23723
+2024,2024-12-21,Holstein Kiel,Augsburg,5,1,2.48595,1.13064
+2024,2024-12-21,Werder Bremen,Union Berlin,4,1,2.73356,1.64107
+2024,2025-01-11,Freiburg,Holstein Kiel,3,2,0.750017,1.66855
+2024,2025-01-11,Hoffenheim,Wolfsburg,0,1,1.18042,1.49127
+2024,2025-01-15,Bayern Munich,Hoffenheim,5,0,3.80458,0.222965
+2024,2025-01-15,Union Berlin,Augsburg,0,2,0.549286,1.41902
+2024,2025-01-18,Holstein Kiel,Hoffenheim,1,3,0.908525,0.905544
+2024,2025-01-18,Bayern Munich,Wolfsburg,3,2,3.23282,0.702414
+2024,2025-01-19,Werder Bremen,Augsburg,0,2,1.15183,1.31644
+2024,2025-01-24,Wolfsburg,Holstein Kiel,2,2,2.52045,0.265769
+2024,2025-01-25,Freiburg,Bayern Munich,1,2,0.271308,0.787581
+2024,2025-02-01,Bayern Munich,Holstein Kiel,4,3,4.93236,2.05752
+2024,2025-02-01,Bochum,Freiburg,0,1,0.843049,3.33243
+2024,2025-02-07,Bayern Munich,Werder Bremen,3,0,4.47713,0.151051
+2024,2025-02-08,Hoffenheim,Union Berlin,0,4,0.881646,3.86589
+2024,2025-02-09,Holstein Kiel,Bochum,2,2,2.0,2.0
+2024,2025-02-16,Werder Bremen,Hoffenheim,1,3,0.85665,1.91874
+2024,2025-02-21,Freiburg,Werder Bremen,5,0,2.66243,1.25462
+2024,2025-02-22,Wolfsburg,Bochum,1,1,2.16138,1.46609
+2024,2025-03-01,Bochum,Hoffenheim,0,1,1.4452,0.525952
+2024,2025-03-01,Werder Bremen,Wolfsburg,1,2,2.10317,1.11674
+2024,2025-03-02,Union Berlin,Holstein Kiel,0,1,0.886081,0.692509
+2024,2025-03-02,Augsburg,Freiburg,0,0,2.222,0.799243
+2024,2025-03-08,Bayern Munich,Bochum,2,3,2.72891,1.36274
+2024,2025-03-15,Union Berlin,Bayern Munich,1,1,0.8044,1.83549
+2024,2025-03-15,Augsburg,Wolfsburg,1,0,0.598968,0.763636
+2024,2025-03-29,Hoffenheim,Augsburg,1,1,1.94509,0.688621
+2024,2025-03-29,Holstein Kiel,Werder Bremen,0,3,0.56476,1.48157
+2024,2025-03-30,Freiburg,Union Berlin,1,2,1.01023,1.38632
+2024,2025-04-04,Augsburg,Bayern Munich,1,3,0.567653,1.91653
+2024,2025-04-06,Union Berlin,Wolfsburg,1,0,1.55071,1.79618
+2024,2025-04-12,Bochum,Augsburg,1,2,1.86097,1.02536
+2024,2025-04-19,Freiburg,Hoffenheim,3,2,1.54968,1.94701
+2024,2025-04-19,Werder Bremen,Bochum,1,0,2.70919,0.4947
+2024,2025-04-26,Wolfsburg,Freiburg,0,1,0.288019,1.95821
+2024,2025-04-27,Bochum,Union Berlin,1,1,1.5178,0.498974
+2024,2025-05-03,Union Berlin,Werder Bremen,2,2,1.35336,1.35783
+2024,2025-05-04,Augsburg,Holstein Kiel,1,3,3.93001,2.10407
+2024,2025-05-09,Wolfsburg,Hoffenheim,2,2,1.36763,1.10881
+2024,2025-05-10,Holstein Kiel,Freiburg,1,2,0.974297,2.01558
+2024,2025-05-17,Hoffenheim,Bayern Munich,0,4,0.661398,2.21427
+2024,2025-05-17,Augsburg,Union Berlin,1,2,1.57932,1.14135
+2025,2025-08-23,Freiburg,Augsburg,1,3,2.27247,1.30191
+2025,2025-08-30,Augsburg,Bayern Munich,2,3,0.506028,3.37523
+2025,2025-09-13,Union Berlin,Hoffenheim,2,4,3.0814,3.34084
+2025,2025-09-20,Hoffenheim,Bayern Munich,1,4,1.03716,2.7142
+2025,2025-09-20,Werder Bremen,Freiburg,0,3,1.27257,2.36315
+2025,2025-09-26,Bayern Munich,Werder Bremen,4,0,4.31859,0.298618
+2025,2025-09-28,Freiburg,Hoffenheim,1,1,1.2587,2.24224
+2025,2025-10-04,Augsburg,Wolfsburg,3,1,1.75326,1.22584
+2025,2025-10-24,Werder Bremen,Union Berlin,1,0,1.1444,0.487613
+2025,2025-11-01,Union Berlin,Freiburg,0,0,1.34842,1.16519
+2025,2025-11-02,Wolfsburg,Hoffenheim,2,3,1.40117,1.74291
+2025,2025-11-07,Werder Bremen,Wolfsburg,2,1,1.69456,0.676326
+2025,2025-11-08,Union Berlin,Bayern Munich,2,2,1.02778,1.34246
+2025,2025-11-22,Bayern Munich,Freiburg,6,2,3.13858,0.516966
+2025,2025-11-29,Hoffenheim,Augsburg,3,0,1.79612,0.655496
+2025,2025-12-06,Wolfsburg,Union Berlin,3,1,0.929936,2.01932
+2025,2025-12-20,Augsburg,Werder Bremen,0,0,1.49411,0.90686
+2025,2025-12-20,Wolfsburg,Freiburg,3,4,1.30583,2.65964
