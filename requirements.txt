@@ -1,0 +1,8 @@
+txt
+pandas
+numpy
+scipy
+matplotlib
+PyQt6
+
+```use python 3.11 for its compatibility with PyQt6  ```
